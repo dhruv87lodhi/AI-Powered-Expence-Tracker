@@ -26,3 +26,15 @@
   - **FastAPI vs Uvicorn**: FastAPI provides routing and business logic; Uvicorn is the ASGI web server that listens on network ports.
   - **Auto-Reload (`--reload`)**: Automatically reloads the development server whenever code is saved.
   - **Automatic OpenAPI / Swagger**: FastAPI generates interactive API documentation without writing separate docs.
+
+  
+## Milestone 2: Configuration & Environment Management
+- **What Was Done**:
+  - Added `pydantic-settings` to manage application configuration.
+  - Created `Backend/app/core/config.py` using `BaseSettings` to declare strongly-typed settings (`PROJECT_NAME`, `API_PREFIX`, `ENV`).
+  - Created `Backend/.env.example` as a public template and `Backend/.env` for local configuration.
+  - Connected `settings` into `Backend/app/main.py` and verified live overriding.
+- **Key Concepts Learned**:
+  - **12-Factor App Config**: Never hardcode configuration or credentials in source code.
+  - **Pydantic BaseSettings**: Strongly-typed settings validation that automatically reads from environment variables and `.env` files.
+  - **`.env` vs `.env.example`**: `.env.example` is committed to document expected variables; `.env` holds actual machine secrets and is ignored by Git.

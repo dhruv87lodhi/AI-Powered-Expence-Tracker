@@ -1,8 +1,12 @@
 from fastapi import FastAPI
+from app.core.config import settings
 
-app = FastAPI(title="Expense Tracker API")
+app = FastAPI(title=settings.PROJECT_NAME)
 
 
 @app.get("/")
 def read_root():
-    return {"message": "Expense Tracker API is running"}
+    return {
+        "message": f"{settings.PROJECT_NAME} is running",
+        "environment": settings.ENV,
+    }
