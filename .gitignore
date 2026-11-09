@@ -1,0 +1,13 @@
+# python bytecode and cache
+__pycache__/
+*.py[cod]
+
+
+# Environments
+Backend/venv/
+venv/
+
+# Environment variables & secrets
+Backend/.env
+.env
+*.env
