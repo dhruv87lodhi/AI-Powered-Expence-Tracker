@@ -11,3 +11,7 @@ venv/
 Backend/.env
 .env
 *.env
+
+
+# Local Context 
+context.md
